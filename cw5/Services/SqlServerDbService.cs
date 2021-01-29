@@ -144,7 +144,7 @@ namespace cw5.Services
             }
         }
 
-        public void PromoteStudent(PromoteStudentsRequest promotion)
+        public PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest promotion)
         {
             var pr = new PromoteStudentsRequest();
             pr.Studies = promotion.Studies;
@@ -157,48 +157,59 @@ namespace cw5.Services
                 var tran = client.BeginTransaction();
                 com.Transaction = tran;
                 PromoteStudentsResponse resp = new PromoteStudentsResponse();
-                com.CommandText = "EXEC PromoteStudents '" + pr.Studies + "', " + pr.Semester;
+                com.CommandText = "EXEC PromoteStudents '" + pr.Studies + "', " + pr.Semester+ " WITH RESULT SETS(( IdEnrollment INT,IDStudy INT,Semester INT,StartDate DateTime)) ";
 
 
                 /*used procedure:
 CREATE PROCEDURE PromoteStudents @Studies NVARCHAR(100), @Semester INT
     AS
     BEGIN
-    DECLARE @IdStudies INT = (SELECT IdStudy FROM Studies WHERE NAme=@Studies);
-    IF @IdStudies IS NULL
-    BEGIN
-    RETURN;
+	DECLARE @IdStudies INT = (SELECT IdStudy FROM Studies WHERE NAme=@Studies);
+	IF @IdStudies IS NULL
+	BEGIN
+	RETURN;
+	
+	END
 
-    END
+	DECLARE @StartDate DATETIME = (SELECT MAX(startdate) FROM enrollment where IdStudy=@IdStudies and Semester =@Semester)
 
-    DECLARE @StartDate DATETIME = (SELECT MAX(startdate) FROM enrollment where IdStudy=@IdStudies and Semester =@Semester)
+	DECLARE @IdEnrollment INT  = (select IdEnrollment from enrollment where IdStudy=@IdStudies and Semester =@Semester and startdate = @StartDate)
 
-    DECLARE @IdEnrollment INT  = (select IdEnrollment from enrollment where IdStudy=@IdStudies and Semester =@Semester and startdate = @StartDate)
+	IF @IdEnrollment IS NULL
+	BEGIN
+	RETURN;
+	
+	END
 
-    IF @IdEnrollment IS NULL
-    BEGIN
-    RETURN;
+	DECLARE @NextSemester INT = (select IdEnrollment from enrollment where IdStudy=@IdStudies and Semester =@semester+1)
+	IF @NextSemester IS NULL
+	BEGIN
+	DECLARE @Max INT = (SELECT MAX(IdEnrollment) FROM enrollment)
+	DECLARE @NextId INT = @Max +1
+	insert into enrollment values(@NextId, @semester+1, @IdStudies, CURRENT_TIMESTAMP)
+	UPDATE student SET IdEnrollment=@NextId WHERE IdEnrollment=@IdEnrollment
+	SELECT * FROM enrollment WHERE  IdEnrollment=@NextId;
+	END
+	ELSE
 
-    END
-
-    DECLARE @NextSemester INT = (select IdEnrollment from enrollment where IdStudy=@IdStudies and Semester =@semester+1)
-    IF @NextSemester IS NULL
-    BEGIN
-    DECLARE @Max INT = (SELECT MAX(IdEnrollment) FROM enrollment)
-    DECLARE @NextId INT = @Max +1
-    insert into enrollment values(@NextId, @semester+1, @IdStudies, CURRENT_TIMESTAMP)
-    UPDATE student SET IdEnrollment=@NextId WHERE IdEnrollment=@IdEnrollment
-    END
-    ELSE
-
-    UPDATE student SET IdEnrollment=@NextSemester WHERE IdEnrollment=@IdEnrollment
-    RETURN;
+	UPDATE student SET IdEnrollment=@NextSemester WHERE IdEnrollment=@IdEnrollment
+	SELECT * FROM enrollment WHERE  IdEnrollment=@NextSemester;
+	RETURN;
 END;
 
                  */
-                var dr = com.ExecuteNonQuery();
+                var dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    resp.IdEnrollment = (int)dr["IdEnrollment"];
+                    resp.idStudy = (int)dr["IDStudy"];
+                    resp.Semester = (int)dr["Semester"];
+                    resp.StartDate = (DateTime)dr["StartDate"];
+                }
+                dr.Close();
 
                 tran.Commit();
+                return (resp);
 
             }
         }

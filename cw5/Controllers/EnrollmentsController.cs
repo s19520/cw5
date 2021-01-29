@@ -48,10 +48,10 @@ namespace cw5.Controllers
         public IActionResult PromoteStudent(PromoteStudentsRequest promotion)
         {
             
-                _service.PromoteStudent(promotion);
+               // _service.PromoteStudent(promotion);
 
                 PromoteStudentsResponse resp = new PromoteStudentsResponse();
-                return CreatedAtRoute(new RouteValues(), resp);
+                return CreatedAtRoute(new RouteValues(), _service.PromoteStudent(promotion));
          }
             
             

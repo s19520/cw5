@@ -11,6 +11,6 @@ namespace cw5.Services
     public interface IStudentsDbService
     {
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest student);
-        public void PromoteStudent(PromoteStudentsRequest newStudent);
+        PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest newStudent);
     }
 }
