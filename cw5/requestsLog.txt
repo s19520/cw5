@@ -82,3 +82,553 @@ body: {
 
 }
 
+29.01.2021 21:51:28
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:51:28
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:51:39
+
+path: /api/enrollments/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 21:53:25
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:53:25
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:53:31
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 21:56:16
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:56:16
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 21:56:20
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 22:52:19
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 22:52:20
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 22:52:51
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:12:53
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:12:54
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:13:07
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:13:22
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:13:24
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:15:36
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:15:36
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:15:41
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:15:48
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:15:53
+
+path: /api/students
+
+method: GET
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:30:58
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:30:59
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:31:03
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:31:50
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:31:50
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:31:55
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:32:42
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:32:42
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:32:50
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:33:20
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:33:20
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:33:25
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:34:20
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:34:20
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:34:24
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:36:54
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:36:54
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:37:00
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:37:21
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:37:21
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:37:26
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 23:38:12
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:38:12
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 23:38:17
+
+path: /api/students
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+

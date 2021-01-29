@@ -15,5 +15,6 @@ namespace cw5.Services
         PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest newStudent);
         Student GetStudent(string index);
 
+        List<Student> GetStudents();
     }
 }

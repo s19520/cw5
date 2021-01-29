@@ -238,6 +238,30 @@ END;
                 return resp;
             }
         }
+        List<Student> IStudentsDbService.GetStudents()
+        {
+            var list = new List<Student>();
+            using (var client = new SqlConnection(ConString))
+            using (var com = new SqlCommand())
+            {
+                com.Connection = client;
+                client.Open();
+                com.CommandText = "SELECT * FROM Student";
+                var dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    var student = new Student();
+                    student.FirstName = (string)dr["FirstName"];
+                    student.LastName = (string)dr["LastName"];
+                    student.BirthDate = (DateTime)dr["BirthDate"];
+                    student.IndexNumber = (string)dr["IndexNumber"];
+                    student.EnrollmentId = (int)dr["IdEnrollment"];
+                    list.Add(student);
+
+                }
+            }
+            return list;
+        }
     }
 }
             
