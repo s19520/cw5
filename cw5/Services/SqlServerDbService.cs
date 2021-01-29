@@ -1,5 +1,6 @@
 ﻿using cw5.DTOs.Requests;
 using cw5.DTOs.Responses;
+using cw5.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -157,7 +158,7 @@ namespace cw5.Services
                 var tran = client.BeginTransaction();
                 com.Transaction = tran;
                 PromoteStudentsResponse resp = new PromoteStudentsResponse();
-                com.CommandText = "EXEC PromoteStudents '" + pr.Studies + "', " + pr.Semester;
+                com.CommandText = "EXEC PromoteStudents '" + pr.Studies + "', " + pr.Semester + " WITH RESULT SETS(( IdEnrollment INT,IDStudy INT,Semester INT,StartDate DateTime)) ";
 
 
                 /*used procedure:
@@ -200,6 +201,30 @@ END;
 
                 tran.Commit();
 
+            }
+        }
+
+        Student IStudentsDbService.GetStudent(string index)
+        {
+            Student resp = new Student();
+            using (var client = new SqlConnection(ConString))
+            using (var com = new SqlCommand())
+            {
+                com.Connection = client;
+                client.Open();
+                com.CommandText = "SELECT * FROM Student Where IndexNumber = '" + index + "'";
+                var dr = com.ExecuteReader();
+                if (!dr.Read()) return null;
+                do
+                {
+                    resp.FirstName = (string)dr["FirstName"];
+                    resp.LastName = (string)dr["LastName"];
+                    resp.BirthDate = (DateTime)dr["BirthDate"];
+                    resp.IndexNumber = (string)dr["IndexNumber"];
+                    resp.EnrollmentId = (int)dr["IdEnrollment"];
+
+                } while (dr.Read());
+                return resp;
             }
         }
     }

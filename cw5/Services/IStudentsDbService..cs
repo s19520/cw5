@@ -1,5 +1,6 @@
 ﻿using cw5.DTOs.Requests;
 using cw5.DTOs.Responses;
+using cw5.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace cw5.Services
     public interface IStudentsDbService
     {
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest student);
-        public void PromoteStudent(PromoteStudentsRequest newStudent);
+        PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest newStudent);
+        Student GetStudent(string index);
     }
 }
