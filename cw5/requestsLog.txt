@@ -1,0 +1,84 @@
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}/api/enrollments
+/favicon.ico
+/api/enrollments/promotions
+/api/enrollments
+
+/favicon.ico
+
+/api/enrollments/promotions
+
+29.01.2021 20:33:20
+
+/api/enrollments
+
+GET
+
+
+
+
+
+29.01.2021 20:33:20
+
+/favicon.ico
+
+GET
+
+
+
+
+
+29.01.2021 20:33:21
+
+/api/enrollments/promotions
+
+POST
+
+
+
+{
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
+29.01.2021 20:35:22
+
+path: /api/enrollments
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 20:35:22
+
+path: /favicon.ico
+
+method: GET
+
+queryString: 
+
+body: 
+
+29.01.2021 20:35:24
+
+path: /api/enrollments/promotions
+
+method: POST
+
+queryString: 
+
+body: {
+
+    "Semester": 13,
+    "Studies": "Studia4"
+
+}
+
