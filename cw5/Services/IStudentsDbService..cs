@@ -14,5 +14,6 @@ namespace cw5.Services
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest student);
         PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest newStudent);
         Student GetStudent(string index);
+
     }
 }
