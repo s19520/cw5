@@ -1,5 +1,6 @@
 ﻿using cw5.DTOs.Requests;
 using cw5.DTOs.Responses;
+using cw5.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace cw5.Services
     {
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest student);
         PromoteStudentsResponse PromoteStudent(PromoteStudentsRequest newStudent);
+        Student GetStudent(string index);
+
     }
 }

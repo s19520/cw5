@@ -11,9 +11,7 @@ namespace cw5.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Semester { get; set; }
-        public DateTime StartDate { get; set; }
-        public string StudyName { get; set; }
+        public int EnrollmentId { get; set; }
         
     }
 }

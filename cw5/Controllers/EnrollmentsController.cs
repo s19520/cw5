@@ -5,11 +5,7 @@ using cw5.Services;
 using Microsoft.AspNetCore.Mvc;
 using Nest;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace cw5.Controllers
 {
@@ -19,8 +15,6 @@ namespace cw5.Controllers
     public class EnrollmentsController : ControllerBase
     {
 
-
-        //private const string ConString = "Data Source=DESKTOP-RSTT48M\\SQLEXPRESS;Initial Catalog=apbd;Integrated Security=True";
         private IStudentsDbService _service;
         public EnrollmentsController(IStudentsDbService service)
         {
